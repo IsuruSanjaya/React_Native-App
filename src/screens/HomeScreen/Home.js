@@ -27,7 +27,7 @@ export default function Home() {
                 </View>
 
 
-                <View style={styles.menuContainer}>
+                <View style={styles.root}>
 
 
                     <CustomButton

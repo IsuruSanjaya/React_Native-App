@@ -8,6 +8,7 @@ import Icon from 'react-native-ionicons'
 import Login from '../../screens/LoginScreen/Login';
 // import AttendenceScreen from '../../screens/PlacesScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import PaymentScreen from '../../screens/PaymentScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -54,7 +55,7 @@ const  Navigation=()=>{
     <NavigationContainer>
     <Stack.Navigator>
       {/* <Stack.Screen name="Login" component={Login} /> */}
-      <Stack.Screen name="Home" component={HomeScreen}  options={{headerShown:false}}/>
+      <Stack.Screen name="Home" component={PaymentScreen}  options={{headerShown:false}}/>
     </Stack.Navigator>
     </NavigationContainer>
 
