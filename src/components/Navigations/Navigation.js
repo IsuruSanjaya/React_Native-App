@@ -9,6 +9,7 @@ import Login from '../../screens/LoginScreen/Login';
 // import AttendenceScreen from '../../screens/PlacesScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import PaymentScreen from '../../screens/PaymentScreen';
+import ProfileScreen from '../../screens/ProfileScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -55,7 +56,7 @@ const  Navigation=()=>{
     <NavigationContainer>
     <Stack.Navigator>
       {/* <Stack.Screen name="Login" component={Login} /> */}
-      <Stack.Screen name="Home" component={PaymentScreen}  options={{headerShown:false}}/>
+      <Stack.Screen name="Home" component={ProfileScreen}  options={{headerShown:false}}/>
     </Stack.Navigator>
     </NavigationContainer>
 
