@@ -1,93 +1,100 @@
-import { View, Text , Image,StyleSheet,useWindowDimensions} from 'react-native'
+import { View, Text, Image, StyleSheet, useWindowDimensions ,ImageBackground} from 'react-native'
 import React, { useState } from 'react'
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import Logo from '../../../assets/images/student.png';
+import auth from '@react-native-firebase/auth';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Login() {
+
+
+export default function Login({navigation}) {
 
 
     // const navigation =useNavigation();
-    const [useremail, setEmail] = useState('');
-    const [password, setPassword]=useState('');
-    const {height}=useWindowDimensions()
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const { height } = useWindowDimensions()
 
-    const onSignInPressed=()=>{
-        // auth().
-        // createUserWithEmailAndPassword(useremail.trim(), password)
-        // .then(()=>{
-        //     console.log("User account created");
-        // })
-        // .catch(error =>{
-        //     if(error.code === 'auth/email-already in use'){
-        //         console.log('That email address is alreay in use !');
+    const onSignInPressed = () => {
+        auth()
+        .signInWithEmailAndPassword(email.trim(),password)
+        .then(()=>{
+            console.log("Sign In Successfull");
+            navigation.navigate('SettingScreen')
 
-        //     }
+        })
+        .catch(error =>{
+            if(error.code === 'auth not allowed'){
+                console.log("Failes to sign in");
+            }
 
-        //     if (ErrorUtils.code === 'auth/invalid-email'){
-        //         comsole.log('That email address is invalid!');
-
-        //     }
-
-        //     console.error(error);
-        // });
+            console.log(error);
+        })
 
     }
 
 
-    const OnForgetPassword=()=>{
+    const OnForgetPassword = () => {
 
         console.warn('Forget password')
 
     }
-  return (
-    <View  style={styles.root}>
+    return (
 
-    <Image source={Logo} style={[styles.logo,{height:height*0.3}]} resizeMode="contain"/>
- 
+        <ImageBackground
+            source={require('../../../assets/images/app.jpg')}
+            style={styles.container}>
+        <View style={styles.root}>
 
-        <CustomInput
-        value={useremail}
-        setValue={setEmail}
-        placeholder="Enter the email"
-        />
+            <Image source={Logo} style={[styles.logo, { height: height * 0.3 }]} resizeMode="contain" />
 
-        <CustomInput
-        value={password}
-        setValue={setPassword}
-        placeholder="Password"
-        secureTextEntry={true}
-        />
+            <CustomInput
+                placeholder="Email"
+                value={email}
+                setValues={setEmail}
+            />
 
-        <CustomButton
-        text="Sign In"
-        onPress={onSignInPressed}
-        type="PRIMARY"
-        />
-        <CustomButton 
-          text="Forget Password" 
-          onPress={OnForgetPassword}
-          type="TERTIARY"
-          />
-    </View>
-  )
+            <CustomInput
+                placeholder="Password"
+                value={password}
+                setValues={setPassword}
+                secureTextEntry={true}
+            />
+
+
+            <CustomButton
+                text="Sign In"
+                onPress={onSignInPressed}
+                type="PRIMARY"
+            />
+            <CustomButton
+                text="Forget Password"
+                onPress={OnForgetPassword}
+                type="TERTIARY"
+            />
+        </View>
+
+        </ImageBackground>
+    )
 }
 
-const styles =StyleSheet.create({
+const styles = StyleSheet.create({
 
 
-    logo:{
-        alignItems:'center',
-        maxwidth:300,
-        maxHeight:200
+    logo: {
+        alignItems: 'center',
+        maxwidth: 300,
+        maxHeight: 200
     },
 
-    root:{
-        alignItems:'center',
-        padding:25,
+    root: {
+        alignItems: 'center',
+        padding: 25,
     },
-
-    fPassword:{
-        backgroundColor:'white'
-    }
+    container: {
+        flex: 1,
+        width: '100%',
+        height: '100%'
+    },
 })

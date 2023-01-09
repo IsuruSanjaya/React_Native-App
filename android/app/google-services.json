@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "925347730961",
+    "firebase_url": "https://testapptravel-ff5bf-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "testapptravel-ff5bf",
+    "storage_bucket": "testapptravel-ff5bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925347730961:android:385603c7f5109e110203b0",
+        "android_client_info": {
+          "package_name": "com.myappproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "925347730961-ciree5mbg432bpci1paa8hc39cp58gsh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myappproject",
+            "certificate_hash": "a2922c4793da0f6f111397feae43e6676b680f03"
+          }
+        },
+        {
+          "client_id": "925347730961-fs2h730uvm0eks05hfpl4fhds14ebl18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKXDkORqp7PzRNY3CFPckDDf8FSYXPUZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "925347730961-fs2h730uvm0eks05hfpl4fhds14ebl18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

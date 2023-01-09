@@ -5,13 +5,13 @@ import CustomButton from '../../components/CustomButton';
 import Heading from '../../components/Heading';
 import auth from '@react-native-firebase/auth';
 
-export default function Register() {
+export default function StudentRegi() {
 
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [rePassword, setRePassword] = useState('');
+  const [Age, setAge] = useState('');
 
 
   const createBtn = ()=>{
@@ -51,19 +51,21 @@ export default function Register() {
 
         
         <CustomInput
-          placeholder="Email"
-          value={email}
-          setValues={setEmail}
+          placeholder="Name"
+          value={name}
+          setValues={setName}
 
         />
         <CustomInput
-          placeholder="Password"
-          value={password}
-          setValues={setPassword}
-          secureTextEntry={true}
-
-
-        />         
+          placeholder="Age"
+          value={Age}
+          setValues={setAge}
+        />  
+        <CustomInput
+          placeholder="Email"
+          value={email}
+          setValues={setEmail}
+        />       
 
           <CustomButton
           text="Register"
@@ -71,14 +73,6 @@ export default function Register() {
           type="TERTIARY"
           />
 
-          <CustomButton
-          text="Already have an account"
-          onPress={''}
-          type="TERTIARY"
-          bgColor="#808080"
-          
-          
-          />
 
       </View>
 

@@ -1,17 +1,8 @@
-
-
 import React from 'react';
+import Navigation from './src/components/Navigations/Navigation';
 
-import Navigation from './src/components/Navigations';
-
-
-
-
- const App=()=>{
+export default function App() {
   return (
-
     <Navigation/>
-  );
- };
-
-export default App;
+  ); 
+};

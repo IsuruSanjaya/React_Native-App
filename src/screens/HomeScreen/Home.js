@@ -8,11 +8,12 @@ import logohome from '../../../assets/images/registered.png'
 // const height = width * 0.6
 
 
-export default function Home() {
+export default function Home({navigation}) {
 
     const onPayment = () => {
 
         console.warn("Payment")
+        navigation.navigate('Setting')
 
     }
     return (
